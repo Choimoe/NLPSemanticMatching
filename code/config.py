@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import torch
+import os
 
 # --- Device Configuration ---
 if torch.backends.mps.is_available():
@@ -11,14 +12,14 @@ else:
 
 # --- Path Configuration ---
 DATA_DIR = "./tcdata/oppo_breeno_round1_data"
-TRAIN_PATH = f"{DATA_DIR}/train.tsv"
-TEST_PATH = f"{DATA_DIR}/testB.tsv" # Path for the B-board test set
+TRAIN_PATH = os.path.join(DATA_DIR, "train.tsv")
+TEST_PATH = os.path.join(DATA_DIR, "testB.tsv")
 
-USER_DATA_DIR = "./user_data"
-MODEL_OUTPUT_PATH = f"{USER_DATA_DIR}/model_data/bert_semantic_matching.bin"
+USER_DATA_DIR = "user_data"
+MODEL_OUTPUT_PATH = os.path.join(USER_DATA_DIR, "model_data/bert_semantic_matching.bin")
 
-PREDICTION_DIR = "./prediction_result"
-PREDICTION_PATH = f"{PREDICTION_DIR}/result.tsv"
+PREDICTION_DIR = "prediction_result"
+PREDICTION_PATH = os.path.join(PREDICTION_DIR, "result.tsv")
 
 # --- Model & Tokenizer Configuration ---
 PRE_TRAINED_MODEL_NAME = "bert-base-chinese"
