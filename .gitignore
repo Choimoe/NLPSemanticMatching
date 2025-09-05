@@ -41,4 +41,4 @@ settings.py.example
 
 .ipynb_checkpoints/
 
-*.tsv
+# *.tsv
